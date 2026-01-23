@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.app {
+    width: 100%;
+    max-width: 600px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Форма */
+.note-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.note-form input,
+.note-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.note-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.note-form button {
+    padding: 10px;
+    background: #4a6cf7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.note-form button:hover {
+    background: #3956d8;
+}
+
+/* Заметки */
+.notes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    white-space: pre-line;
+}
+.note {
+    padding: 15px;
+    background: #f0f2f5;
+    border-radius: 8px;
+}
+
+.note h2 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.note p {
+    margin: 0;
+}
