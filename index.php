@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "notes.php";
 ?>
 <!DOCTYPE html>
@@ -19,12 +20,13 @@ require_once "notes.php";
                 type="text"
                 name="title"
                 placeholder="Заголовок заметки"
+                value=<?= $editableNote['title'] ?? '';?>
         >
 
         <textarea
                 name="content"
                 placeholder="Текст заметки"
-        ></textarea>
+        ><?= $editableNote['content'] ?? '';?></textarea>
 
         <button type="submit">Сохранить</button>
     </form>
