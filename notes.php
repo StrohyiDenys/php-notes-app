@@ -30,7 +30,6 @@ function returnById($note_id){
     $notes = decodeJson();
     foreach ($notes as $note){
         if ($note['note_id'] == $note_id){
-            var_dump($note); ##debug
             return $note;
         }
     }
@@ -72,9 +71,11 @@ function show_notes(){
     if(file_exists("notes.json")){
         $notes = decodeJson();
         foreach ($notes as $elem){
+            $title = htmlspecialchars($elem['title']);
+            $content = htmlspecialchars($elem['content']);
             echo "<div class=\"note\">
-                <h2>{$elem['title']}</h2>
-                <p>{$elem['content']}</p>
+                <h2>{$title}</h2>
+                <p>{$content}</p>
                 <form action=\"notes.php\" method=\"post\">
                 <input type=\"hidden\" name=\"note_id\" value=\"{$elem['note_id']}\">
                 <button type=\"submit\" name='action' value='delete'>Удалить</button>
