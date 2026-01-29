@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require_once "notes.php";
 ?>
 <!DOCTYPE html>
@@ -20,13 +20,15 @@ require_once "notes.php";
                 type="text"
                 name="title"
                 placeholder="Заголовок заметки"
-                value=<?= $editableNote['title'] ?? '';?>
+                value='<?=$_SESSION['note']['title'] ?? ''?>'
         >
-
+        <?php if (!empty($_SESSION['note']['note_id'])): ?>
+        <input type="hidden" name="note_id" value='<?=$_SESSION['note']['note_id']?>'>
+        <?php endif; ?>
         <textarea
                 name="content"
                 placeholder="Текст заметки"
-        ><?= $editableNote['content'] ?? '';?></textarea>
+        ><?= $_SESSION['note']['content'] ?? ''?></textarea>
 
         <button type="submit">Сохранить</button>
     </form>
