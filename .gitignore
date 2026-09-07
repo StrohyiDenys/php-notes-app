@@ -1,0 +1,10 @@
+# PhpStorm
+.idea/
+# Logs
+*.log
+# Temporary files
+*.tmp
+# Cache
+cache/
+# Dev`s personal notes
+*.txt

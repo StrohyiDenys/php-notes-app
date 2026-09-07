@@ -73,13 +73,7 @@ function show_notes(){
         foreach ($notes as $elem){
             $title = htmlspecialchars($elem['title']);
             $content = htmlspecialchars($elem['content']);
-            echo "<div class=\"note\">
-                <h2>{$title}</h2>
-                <p>{$content}</p>
-                <form action=\"notes.php\" method=\"post\">
-                <input type=\"hidden\" name=\"note_id\" value=\"{$elem['note_id']}\">
-                <button type=\"submit\" name='action' value='delete'>Удалить</button>
-                <button type=\"submit\" name='action' value='edit'>Редактировать</button>
+            echo " name='action' value='edit'>Редактировать</button>
                 </form>
                 </div>";
         }
